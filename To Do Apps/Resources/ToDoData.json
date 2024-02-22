@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Learning",
+        "description": "Learning The Compossible Architecture",
+        "id": "1001",
+        "type": "Personal",
+        "done": false,
+    },
+    {
+        "name": "Shopping",
+        "description": "Shopping at Grand Indonesia",
+        "id": "1002",
+        "type": "Shop",
+        "done": true,
+    },
+    {
+        "name": "Working for To Do List App",
+        "description": "Deadline 25 Desember 2024",
+        "id": "1003",
+        "type": "Work",
+        "done": true,
+    },
+]
