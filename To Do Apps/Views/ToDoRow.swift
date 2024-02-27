@@ -44,7 +44,7 @@ struct ToDoRow: View {
                         case "Work":
                             Color.brown
                         case "Shop":
-                            Color.brown
+                            Color.mint
                         default:
                             Color.red
                         }
