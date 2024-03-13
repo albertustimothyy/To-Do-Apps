@@ -12,54 +12,47 @@ struct ContentView: View {
     
     var body: some View {
         NavigationSplitView {
-            ToDoList().navigationBarTitleDisplayMode(.inline)
+            ToDoList()
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         HStack {
-                            Text("To Do List App 📝").font(.title).bold()
+                            Text("To Do List App 📝")
+                                .font(.title)
+                                .bold()
                             
                             Spacer()
+                            
                             Menu {
                                 NavigationLink {
-                                    AddTask()
+                                    AddTask(type: .general)
                                 } label: {
                                     Label("General Task", systemImage: "list.bullet.clipboard")
                                 }
                                 
                                 NavigationLink {
-                                    AddTask()
-                                } label: {
-                                    Label("Personal Task", systemImage: "person")
-                                }
-                                
-                                NavigationLink {
-                                    AddTask()
+                                    AddTask(type: .shop)
                                 } label: {
                                     Label("Shopping Task", systemImage: "storefront")
                                 }
                                 
                                 NavigationLink {
-                                    AddTask()
+                                    AddTask(type: .travel)
                                 } label: {
                                     Label("Travelling Task", systemImage: "airplane")
                                 }
                                 
                                 NavigationLink {
-                                    AddTask()
+                                    AddTask(type: .work)
                                 } label: {
                                     Label("Working Task", systemImage: "person")
                                 }
                                 
-                                NavigationLink {
-                                    AddTask()
-                                } label: {
-                                    Label("Learning Task", systemImage: "book.closed")
-                                }
-                                
+                               
                             } label: {
                                 Image(systemName: "plus.circle.fill")
-                              }
                             }
+                        }
                     }
                 }
         } detail: {

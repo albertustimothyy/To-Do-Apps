@@ -6,32 +6,25 @@
 //
 
 import SwiftUI
+import MapKit
+
+enum Action {
+    case add
+    case edit
+}
+
 
 struct EditTask: View {
     @EnvironmentObject var modelData: ListViewModel
     
     @State private var offset: CGFloat = 1000
     
-    var todo: ToDo
+    var type: ToDoType
+    @State var generalToDo: GeneralToDo?
+    @State var workToDo: WorkToDo?
+    @State var travelToDo: TravelToDo?
+    @State var shopToDo: ShopToDo?
     
-    @State var inputName: String
-    @State var inputDescription: String
-    @State var inputType: String
-    
-    init(todo: ToDo) {
-        self.todo = todo
-        _inputName = State(initialValue: todo.name)
-        _inputDescription = State(initialValue: todo.description)
-        _inputType = State(initialValue: todo.type)
-    }
- 
-    var toDosIndex: Int {
-         if let index = modelData.toDos.firstIndex(where: { $0.id == todo.id }) {
-             return index
-         } else {
-             return 0
-         }
-     }
     
     
     var body: some View {
@@ -43,79 +36,147 @@ struct EditTask: View {
                 }
             
             ScrollView {
-                Text("Edit Task").font(.title2).bold().padding(.bottom, 10)
-                VStack(alignment: .leading) {
-                    Text("Task Name:")
-                    TextField("Enter Task Name", text: $inputName).font(.system(size: 16)).padding(.horizontal).frame(height: 40).background(Color(.systemGray6)).cornerRadius(10)
-                }.padding([.leading, .bottom, .trailing], 10.0).padding(.top, 10.0)
-                
-                
-                
-                VStack(alignment: .leading) {
-                    Text("Description:")
-                    TextField("Enter Description", text: $inputDescription).font(.system(size: 16)).padding(.horizontal).frame(height: 40).background(Color(.systemGray6)).cornerRadius(10)
-                }.padding(10)
-                
-                VStack(alignment: .leading) {
-                            Text("Type:")
-                    RadioButtonGroups(selectedType: $inputType) { selected in
-                        print("Selected type: \(selected)")
+                VStack(spacing: 20) {
+                    Text("Edit Task").font(.title2).bold().padding(.bottom, 10)
+                    VStack(alignment: .leading) {
+                        Text("Task Name:")
+                        TextField("Enter Task Name", text:
+                            Binding<String>(
+                                get: {
+                                    switch type {
+                                    case .general:
+                                        return generalToDo?.name ?? ""
+                                    case .shop:
+                                        return shopToDo?.name ?? ""
+                                    case .travel:
+                                        return travelToDo?.name ?? ""
+                                    case .work:
+                                        return workToDo?.name ?? ""
+                                    }
+                                },
+                                set: { newValue in
+                                    switch type {
+                                    case .general:
+                                        generalToDo?.name = newValue
+                                    case .shop:
+                                        shopToDo?.name = newValue
+                                    case .travel:
+                                        travelToDo?.name = newValue
+                                    case .work:
+                                        workToDo?.name = newValue
+                                    }
+                                }
+                            )
+                        )
+                        .font(.system(size: 16))
+                        .padding(.horizontal)
+                        .frame(height: 40)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
                     }
-                }.padding(10)
-                
-                
-                Button(action: saveButton, label: {
-                    Text("Save").textCase(.uppercase).foregroundColor(.white).bold().frame(height: 50).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).background(Color(.blue)).clipShape(RoundedRectangle(cornerRadius: 25)).padding()
-                })
-                .padding(.top, 10.0)
-            }.fixedSize(horizontal: false, vertical: true).padding().background(.white).clipShape(RoundedRectangle(cornerRadius: 20)).overlay {
-                VStack {
-                    HStack {
+
+                    
+                    
+                    VStack(alignment: .leading) {
+                        Text("Description:")
+                        TextField("Enter Description", text:
+                            Binding<String>(
+                                get: {
+                                    switch type {
+                                    case .general:
+                                        return generalToDo?.description ?? ""
+                                    case .shop:
+                                        return shopToDo?.description ?? ""
+                                    case .travel:
+                                        return travelToDo?.description ?? ""
+                                    case .work:
+                                        return workToDo?.description ?? ""
+                                    }
+                                },
+                                set: { newValue in
+                                    switch type {
+                                    case .general:
+                                        generalToDo?.description = newValue
+                                    case .shop:
+                                        shopToDo?.description = newValue
+                                    case .travel:
+                                        travelToDo?.description = newValue
+                                    case .work:
+                                        workToDo?.description = newValue
+                                    }
+                                }
+                            )
+                        )
+                        .font(.system(size: 16))
+                        .padding(.horizontal)
+                        .frame(height: 40)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                    }
+
+                    
+                    switch type {
+                    case .general:
+                        SaveButton(action: Action.edit, type: .general, dismiss: {close()}, generalToDo: generalToDo)
+                        
+                    case .shop:
+                        ShopForm(shopToDo: $shopToDo)
+                        SaveButton(action: Action.edit, type: .shop, dismiss: {close()}, shopToDo: shopToDo)
+                    case .travel:
+                        TravelForm(travelToDo: $travelToDo)
+                        SaveButton(action: Action.edit, type: .travel, dismiss: {close()}, travelToDo: travelToDo)
+                    case .work:
+                        WorkForm(todo: $workToDo)
+                        SaveButton(action: Action.edit, type: .work, dismiss: { close() }, workToDo: workToDo)
+                    }
+                    
+                    
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                .padding()
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20)).overlay {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button {
+                                close()
+                            } label: {
+                                Image(systemName: "xmark")
+                                    .font(.title2)
+                                    .fontWeight(.medium)
+                            }.tint(.black)
+                        }
                         Spacer()
-                        Button {
-                            close()
-                        } label: {
-                            Image(systemName: "xmark")
-                                .font(.title2)
-                                .fontWeight(.medium)
-                        }.tint(.black)
+                    }.padding()
+                }
+                .shadow(radius: 20)
+                .padding(30)
+                .offset(x: 0, y: offset)
+                .onAppear {
+                    withAnimation(.spring()) {
+                        offset = 0
                     }
-                    Spacer()
-                }.padding()
-            }
-            .shadow(radius: 20)
-            .padding(30)
-            .offset(x: 0, y: offset)
-            .onAppear {
-                withAnimation(.spring()) {
-                    offset = 0
                 }
             }
         }
     }
     
-    func saveButton() {
-        if inputValidation() {
-            modelData.editItem(toDosIndex: toDosIndex, name: inputName, description: inputDescription, type: inputType)
-            close()
-        }
-    }
     
     func close() {
         modelData.isEditingActive = false
-        withAnimation(.spring()) {
+        withAnimation(.spring().speed(0.5)) {
             offset = 1000
         }
-    }
-    
-    func inputValidation() -> Bool {
-        if inputName.count < 3 || inputDescription.count < 3 {
-            return false
-        }
-        return true
     }
 }
 
 #Preview {
-    EditTask(todo: ModelData().toDos[1]).environmentObject(ListViewModel())
+    let todo = ModelData().toDos[2]
+    if let workToDo = todo.base as? WorkToDo? {
+        return Group {
+            EditTask(type: .work, workToDo: workToDo)
+        }
+    }
+    return EmptyView()
 }

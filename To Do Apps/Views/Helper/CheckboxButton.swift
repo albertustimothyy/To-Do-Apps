@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckboxButton: View {
-    var toDo: ToDo
+    var toDo: AnyToDo
     @Binding var isSet: Bool
     
     var body: some View {
@@ -16,11 +16,11 @@ struct CheckboxButton: View {
             isSet.toggle()
         } label: {
             HStack {
-                Label("Toggle Done", systemImage: isSet ? "checkmark.square.fill" : "square").labelStyle(.iconOnly).foregroundColor(isSet ? .blue : .red)
+                Label("Toggle Done", systemImage: isSet ? "checkmark.square.fill" : "square").labelStyle(.iconOnly).foregroundStyle(isSet ? .blue : .red)
                 
                 VStack(alignment: .leading) {
-                    Text(toDo.name).font(.subheadline).foregroundColor(.black).strikethrough(toDo.done ? true : false)
-                    Text(toDo.description).font(.caption2).foregroundColor(Color.gray).italic().strikethrough(toDo.done ? true : false)
+                    Text(toDo.base.name).font(.subheadline).foregroundStyle(.black).strikethrough(toDo.base.done ? true : false)
+                    Text(toDo.base.description).font(.caption2).foregroundStyle(Color.gray).italic().strikethrough(toDo.base.done ? true : false)
                 }
             }.buttonStyle(.plain)
         }

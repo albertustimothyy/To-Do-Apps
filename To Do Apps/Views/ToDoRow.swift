@@ -9,70 +9,76 @@ import SwiftUI
 
 struct ToDoRow: View {
     @EnvironmentObject var modelData: ListViewModel
-
+    
     @State private var showAction = false
     @State var isActive: Bool = true
-
-    var toDo: ToDo
+    
+    @State private var isShowingDetail = false
+    
+    var toDo: AnyToDo
     let onEditTapped: (() -> Void)
     
-   var toDosIndex: Int {
-        if let index = modelData.toDos.firstIndex(where: { $0.id == toDo.id }) {
+    var toDosIndex: Int {
+        if let index = modelData.toDos.firstIndex(where: { $0.base.id == toDo.base.id }) {
             return index
         } else {
             return 0
         }
     }
     
-    var body: some View {
-        @ObservedObject var modelData = modelData
-
+    var body: some View {        
         VStack  {
-         
+            
             HStack {
-                CheckboxButton(toDo: toDo, isSet: $modelData.toDos[toDosIndex].done)
+                CheckboxButton(toDo: toDo, isSet: $modelData.toDos[toDosIndex].base.done)
                 
                 Spacer()
                 
-                Text(toDo.type)
-                    .font(.caption).foregroundColor(Color.white).padding(4.0).background(Group {
-                        switch toDo.type {
-                        case "Personal":
+                Text(toDo.typee.rawValue.capitalized)
+                    .font(.caption)
+                    .foregroundStyle(Color.white)
+                    .padding(4.0)
+                    .background(Group {
+                        switch toDo.typee {
+                        case .general:
                             Color.blue
-                        case "Travel":
-                            Color.green
-                        case "Work":
-                            Color.brown
-                        case "Shop":
+                        case .shop:
                             Color.mint
-                        default:
-                            Color.red
+                        case .travel:
+                            Color.green
+                        case .work:
+                            Color.brown
                         }
-                    }).cornerRadius(8).padding(10)
+                    })
+                    .cornerRadius(8)
+                    .padding(10)
                 
                 
                 Button {
                     showAction = true
                 } label: {
                     Label("Action Button", systemImage: "ellipsis")
-                        .foregroundColor(.black).labelStyle(.iconOnly)
+                        .foregroundStyle(.black)
+                        .labelStyle(.iconOnly)
                 } .rotationEffect(.degrees(90)).confirmationDialog("Action", isPresented: $showAction) {
                     Button("Edit Task") {
                         onEditTapped()
-//                        isActive = true
                     }
+                    .background(NavigationLink("Detail", destination: DetailTask(todo: toDo)))
+                    
                     Button("Delete Task", role: .destructive) {
                         modelData.deleteItem(toDosIndex: toDosIndex)
                     }
                     Button("Cancel", role: .cancel) {}
                 } message: {
-                    Text(toDo.name)
-                }.buttonStyle(.plain)
+                    Text(toDo.base.name)
+                }
+                .buttonStyle(.plain)
             }
             .padding(.vertical, 7.0)
         }
         
-       
+        
     }
 }
 

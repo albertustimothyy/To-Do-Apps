@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D909BB252B98117700019F41 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909BB242B98117700019F41 /* SaveButton.swift */; };
 		D91A87052B88420D00F09A02 /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A87042B88420D00F09A02 /* AddTask.swift */; };
 		D91A870A2B8B92BF00F09A02 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A87092B8B92BF00F09A02 /* ListViewModel.swift */; };
 		D91A870C2B8BAA8E00F09A02 /* RadioButtonField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A870B2B8BAA8E00F09A02 /* RadioButtonField.swift */; };
@@ -21,10 +22,23 @@
 		D955892C2B87513C00013D68 /* ToDoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955892B2B87513C00013D68 /* ToDoRow.swift */; };
 		D955892D2B87536900013D68 /* ToDoData.json in Resources */ = {isa = PBXBuildFile; fileRef = D95589252B87380700013D68 /* ToDoData.json */; };
 		D955892F2B875E5400013D68 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D955892E2B875E5400013D68 /* ToDoList.swift */; };
+		D97AB20A2B91000A00CEB948 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D97AB2092B91000A00CEB948 /* LocationPicker */; };
+		D97AB20C2B91001D00CEB948 /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D97AB20B2B91001D00CEB948 /* LocationPicker */; };
+		D97AB2112B917EA100CEB948 /* WorkForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB2102B917EA100CEB948 /* WorkForm.swift */; };
+		D97AB2142B94C0B400CEB948 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB2132B94C0B400CEB948 /* LocationManager.swift */; };
+		D97AB2162B94C41C00CEB948 /* SearchLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB2152B94C41C00CEB948 /* SearchLocation.swift */; };
+		D97AB2182B95EA1E00CEB948 /* TravelForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97AB2172B95EA1E00CEB948 /* TravelForm.swift */; };
 		D9C492842B8C6344003690D6 /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C492832B8C6344003690D6 /* EditTask.swift */; };
+		D9EA01CA2B96301D00CB38AA /* DetailTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA01C92B96301D00CB38AA /* DetailTask.swift */; };
+		D9EA01CD2B963B1900CB38AA /* WorkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA01CC2B963B1900CB38AA /* WorkDetail.swift */; };
+		D9EA01D02B96BC4B00CB38AA /* TravelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA01CF2B96BC4B00CB38AA /* TravelDetail.swift */; };
+		D9EA01D22B96F48C00CB38AA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA01D12B96F48C00CB38AA /* ImagePicker.swift */; };
+		D9EA01D42B96F6E500CB38AA /* ShopForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA01D32B96F6E500CB38AA /* ShopForm.swift */; };
+		D9F1F4B32B9AAE4B00AE9237 /* ShopDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1F4B22B9AAE4B00AE9237 /* ShopDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D909BB242B98117700019F41 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		D91A87042B88420D00F09A02 /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 		D91A87092B8B92BF00F09A02 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D91A870B2B8BAA8E00F09A02 /* RadioButtonField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonField.swift; sourceTree = "<group>"; };
@@ -40,7 +54,17 @@
 		D95589292B87421300013D68 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		D955892B2B87513C00013D68 /* ToDoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRow.swift; sourceTree = "<group>"; };
 		D955892E2B875E5400013D68 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; tabWidth = 4; };
+		D97AB2102B917EA100CEB948 /* WorkForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkForm.swift; sourceTree = "<group>"; };
+		D97AB2132B94C0B400CEB948 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D97AB2152B94C41C00CEB948 /* SearchLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocation.swift; sourceTree = "<group>"; };
+		D97AB2172B95EA1E00CEB948 /* TravelForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelForm.swift; sourceTree = "<group>"; };
 		D9C492832B8C6344003690D6 /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
+		D9EA01C92B96301D00CB38AA /* DetailTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTask.swift; sourceTree = "<group>"; };
+		D9EA01CC2B963B1900CB38AA /* WorkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetail.swift; sourceTree = "<group>"; };
+		D9EA01CF2B96BC4B00CB38AA /* TravelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetail.swift; sourceTree = "<group>"; };
+		D9EA01D12B96F48C00CB38AA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D9EA01D32B96F6E500CB38AA /* ShopForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopForm.swift; sourceTree = "<group>"; };
+		D9F1F4B22B9AAE4B00AE9237 /* ShopDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97AB20A2B91000A00CEB948 /* LocationPicker in Frameworks */,
+				D97AB20C2B91001D00CEB948 /* LocationPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D91A87092B8B92BF00F09A02 /* ListViewModel.swift */,
+				D97AB2132B94C0B400CEB948 /* LocationManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -81,13 +108,13 @@
 		D95589112B8709F000013D68 /* To Do Apps */ = {
 			isa = PBXGroup;
 			children = (
-				D91A87062B8B914D00F09A02 /* ViewModels */,
-				D95589262B87404F00013D68 /* Models */,
-				D95589202B87247C00013D68 /* Views */,
 				D95589122B8709F000013D68 /* To_Do_AppsApp.swift */,
 				D95589162B8709F200013D68 /* Assets.xcassets */,
+				D95589262B87404F00013D68 /* Models */,
 				D95589182B8709F200013D68 /* Preview Content */,
 				D95589242B87377800013D68 /* Resources */,
+				D91A87062B8B914D00F09A02 /* ViewModels */,
+				D95589202B87247C00013D68 /* Views */,
 			);
 			path = "To Do Apps";
 			sourceTree = "<group>";
@@ -103,12 +130,15 @@
 		D95589202B87247C00013D68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9EA01CB2B963AF700CB38AA /* SubTaskDetail */,
+				D97AB20F2B917E8000CEB948 /* SubTaskForm */,
 				D91A87042B88420D00F09A02 /* AddTask.swift */,
 				D95589142B8709F000013D68 /* ContentView.swift */,
 				D955892E2B875E5400013D68 /* ToDoList.swift */,
 				D955892B2B87513C00013D68 /* ToDoRow.swift */,
 				D95589212B872B5F00013D68 /* Helper */,
 				D9C492832B8C6344003690D6 /* EditTask.swift */,
+				D9EA01C92B96301D00CB38AA /* DetailTask.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +149,9 @@
 				D95589222B872BF900013D68 /* CheckboxButton.swift */,
 				D91A870B2B8BAA8E00F09A02 /* RadioButtonField.swift */,
 				D91A870D2B8BAD9700F09A02 /* RadioButtonGroup.swift */,
+				D97AB2152B94C41C00CEB948 /* SearchLocation.swift */,
+				D9EA01D12B96F48C00CB38AA /* ImagePicker.swift */,
+				D909BB242B98117700019F41 /* SaveButton.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -140,6 +173,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D97AB20F2B917E8000CEB948 /* SubTaskForm */ = {
+			isa = PBXGroup;
+			children = (
+				D97AB2102B917EA100CEB948 /* WorkForm.swift */,
+				D97AB2172B95EA1E00CEB948 /* TravelForm.swift */,
+				D9EA01D32B96F6E500CB38AA /* ShopForm.swift */,
+			);
+			path = SubTaskForm;
+			sourceTree = "<group>";
+		};
+		D9EA01CB2B963AF700CB38AA /* SubTaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D9EA01CC2B963B1900CB38AA /* WorkDetail.swift */,
+				D9EA01CF2B96BC4B00CB38AA /* TravelDetail.swift */,
+				D9F1F4B22B9AAE4B00AE9237 /* ShopDetail.swift */,
+			);
+			path = SubTaskDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,6 +209,10 @@
 			dependencies = (
 			);
 			name = "To Do Apps";
+			packageProductDependencies = (
+				D97AB2092B91000A00CEB948 /* LocationPicker */,
+				D97AB20B2B91001D00CEB948 /* LocationPicker */,
+			);
 			productName = "To Do Apps";
 			productReference = D955890F2B8709F000013D68 /* To Do Apps.app */;
 			productType = "com.apple.product-type.application";
@@ -184,6 +241,9 @@
 				Base,
 			);
 			mainGroup = D95589062B8709F000013D68;
+			packageReferences = (
+				D97AB2082B91000A00CEB948 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */,
+			);
 			productRefGroup = D95589102B8709F000013D68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -213,15 +273,26 @@
 			files = (
 				D91A870A2B8B92BF00F09A02 /* ListViewModel.swift in Sources */,
 				D955892C2B87513C00013D68 /* ToDoRow.swift in Sources */,
+				D97AB2112B917EA100CEB948 /* WorkForm.swift in Sources */,
+				D9EA01CA2B96301D00CB38AA /* DetailTask.swift in Sources */,
+				D9F1F4B32B9AAE4B00AE9237 /* ShopDetail.swift in Sources */,
 				D9C492842B8C6344003690D6 /* EditTask.swift in Sources */,
+				D9EA01CD2B963B1900CB38AA /* WorkDetail.swift in Sources */,
 				D95589152B8709F000013D68 /* ContentView.swift in Sources */,
 				D91A87052B88420D00F09A02 /* AddTask.swift in Sources */,
+				D9EA01D42B96F6E500CB38AA /* ShopForm.swift in Sources */,
 				D95589232B872BF900013D68 /* CheckboxButton.swift in Sources */,
 				D955892F2B875E5400013D68 /* ToDoList.swift in Sources */,
 				D91A870C2B8BAA8E00F09A02 /* RadioButtonField.swift in Sources */,
 				D955892A2B87421300013D68 /* ModelData.swift in Sources */,
+				D97AB2142B94C0B400CEB948 /* LocationManager.swift in Sources */,
 				D95589132B8709F000013D68 /* To_Do_AppsApp.swift in Sources */,
+				D9EA01D02B96BC4B00CB38AA /* TravelDetail.swift in Sources */,
 				D91A870E2B8BAD9700F09A02 /* RadioButtonGroup.swift in Sources */,
+				D97AB2182B95EA1E00CEB948 /* TravelForm.swift in Sources */,
+				D909BB252B98117700019F41 /* SaveButton.swift in Sources */,
+				D9EA01D22B96F48C00CB38AA /* ImagePicker.swift in Sources */,
+				D97AB2162B94C41C00CEB948 /* SearchLocation.swift in Sources */,
 				D95589282B87407900013D68 /* ToDo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +429,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"To Do Apps/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "To-Do-Apps-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -386,6 +459,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"To Do Apps/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "To-Do-Apps-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,6 +501,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D97AB2082B91000A00CEB948 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alessiorubicini/LocationPickerForSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D97AB2092B91000A00CEB948 /* LocationPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D97AB2082B91000A00CEB948 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
+			productName = LocationPicker;
+		};
+		D97AB20B2B91001D00CEB948 /* LocationPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D97AB2082B91000A00CEB948 /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
+			productName = LocationPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D95589072B8709F000013D68 /* Project object */;
 }

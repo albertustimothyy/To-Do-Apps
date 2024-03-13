@@ -20,12 +20,34 @@ struct ToDoList: View {
                             modelData.editTodoItem(for: toDo)
                         }
                     )
-                }.onMove(perform: modelData.moveItem)
-            }.listStyle(.plain)
+                }
+                .onMove(perform: modelData.moveItem)
+            }
+            .listStyle(.plain)
             
             if modelData.isEditingActive, let todo = modelData.editTodo {
-                EditTask(todo: todo)
-             
+                switch todo.typee {
+                case .general:
+                    if let generalToDo = todo.base as? GeneralToDo? {
+                        EditTask(type: .general, generalToDo: generalToDo)
+                    }
+                    
+                case .shop:
+                    if let shopToDo = todo.base as? ShopToDo? {
+                        EditTask(type: .shop, shopToDo: shopToDo)
+                    }
+                    
+                case .travel:
+                    if let travelToDo = todo.base as? TravelToDo? {
+                        EditTask(type: .travel, travelToDo: travelToDo)
+                    }
+
+                case .work:
+                    if let workToDo = todo.base as? WorkToDo? {
+                        EditTask(type: .work, workToDo: workToDo)
+                    }
+
+                }
             }
         }
     }

@@ -46,8 +46,8 @@ struct RadioButtonField: View {
                 Text(label)
                         .font(Font.system(size: textSize))
                 Spacer()
-            }.foregroundColor(self.color)
-        }.foregroundColor(Color.white)
+            }.foregroundStyle(self.color)
+        }.foregroundStyle(Color.white)
     }
 }
 
